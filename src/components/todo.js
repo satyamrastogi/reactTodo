@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import './css/todo.css'
 export class todo extends Component {
     constructor(props){
         super(props);
@@ -15,11 +15,10 @@ export class todo extends Component {
         this.setState({ name: nextProps.todoListName });  
       }
     render() {
-        console.log(this.props)
         const nameList = this.state.name.map((name,index) =>(
-            <div>
-                <button id={index} onClick={() =>this.removeTodo({index})}>remove</button>
-                <h2>{name}</h2>
+            <div className="list-item" key={index}>
+                {name}
+                <button className="delete is-pulled-right" id={index} key={index} onClick={() =>this.removeTodo({index})}></button>
             </div>
         ));
         return (

@@ -54,7 +54,7 @@ class TodoList extends Component {
                         value={this.state.term}
                         onChange={(e) => this.setState({term: e.target.value})}
                         />
-                        <button className='button'>Submit</button>
+                        <button className='button' disabled={this.state.term===''?true:false}>Submit</button>
                     </form>
                 </div>
             </div>
